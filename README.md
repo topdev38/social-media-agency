@@ -82,4 +82,4 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
          }
      }
      ```
-Front-end and back-end designed with Django for www.ingexgo.com
+Front-end and back-end designed with Django for www.aapoon.com
