@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    
+    {% image self.head_image fill-900x400 as banner %}
+    <!-- start head-short -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="head-short">
+                <h1 style="color: #fff; letter-spacing: 10px; text-transform: uppercase;">
+                    {{page.title}}
+                </h1>
+            </div>
+            <div class="whitepaper-custom-text">
+                <p>
+                    {{self.custom_title | safe}}
+                </p>
+            </div>
+            <div class="line-full-width"></div>
+            <div class="summary-content">
+                {{ self.summary | safe }}
+            </div>
+            
+    </section>
+    <!-- end head-short -->
+{% endblock content %}

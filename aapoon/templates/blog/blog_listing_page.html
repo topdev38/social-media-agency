@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load wagtailimages_tags wagtailroutablepage_tags %}
+
+{% block content %}
+
+    <!-- start featured -->
+    <section class="featured section-padding" id="service">
+        <div class="container">
+            <div class="head-short">
+                <h1>
+                    B L O G
+                </h1>
+            </div>
+            <div class="row">
+                
+                {% for post in posts %}
+                    {% image post.blog_image fill-286x180 as post_img %}
+                    <div class="col col-lg-4 col-xs-6">
+                        <div class="card fadeInUpSlow">
+                            
+                            <a href="{{post.url}}">
+                                {% if post_img.url != null %}
+                                <img class="card-img-top" src="{{post_img.url}}" alt="Card image cap" width="100%">
+                                {% endif %}
+                            </a>
+                            <div class="card-body">
+                            <h5 class="card-title">{{post.custom_title}}</h5>
+                            <p class="card-text">{{post.summary | safe}}</p>
+                            <a href="{{post.url}}" class="btn btn-primary">Read More</a>
+                            </div> 
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>    
+            <div class="paginate">
+                <ul class="pagination">
+                    {% if posts.has_previous %}
+                      <li><a href="?page={{ posts.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li>
+                    {% endif %}
+                    {% for page_num in posts.paginator.page_range %}
+                      <li {% if page_num == posts.number %} class="active" {% endif %}><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+                    {% endfor %}
+                    {% if posts.has_next %}
+                      <li><a href="?page={{ posts.next_page_number }}"><i class="fa fa-angle-right"></i></a></li>
+                    {% endif %}
+                  </ul>
+            </div>
+        </div> <!-- end container -->
+    </section>
+    <!-- end featured -->
+{% endblock content %}

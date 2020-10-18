@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+{% load static %}
+{% block content %}
+    <!-- start faq-->
+    <section class="faq section-padding">
+        <div class="container">
+            <div class="head-short">
+                <h1>
+                    F A Q
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col col-md-12 right-col">
+                    <div class="title">
+                        <h2>Frequently asked questions.</h2>
+                        <!-- <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, con sectetur adipisci velit, sed quia non numquam</p> -->
+                    </div>
+                    <div class="panel-group" id="accordion">
+                        {% for faq in page.faqs %}
+                            {% include_block faq with id=faq.id %}
+                        {% endfor %}                  
+                    </div>
+                </div>
+            </div> <!-- end row -->
+        </div> <!-- end container -->
+    </section>
+    <!-- end faq-->
+{% endblock content %}

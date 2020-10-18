@@ -1,0 +1,46 @@
+{% load static %}
+
+<!-- Start header -->
+<header class="site-header">
+
+    <nav class="navigation navbar navbar-default">
+        <div class="container nav-header-flex">
+            <div class="navbar-header">
+                <button type="button" class="open-btn">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="full-screen-logo" href="/"><img src="{% static 'images/logo.png' %}" alt class="img img-responsive"></a>
+                <a class="mobile-logo" href="/"><img src="{% static 'images/mobile-logo.png' %}" alt class="img img-responsive"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right">
+                <button class="close-navbar"><i class="fa fa-close"></i></button>
+                <ul class="nav navbar-nav"> 
+                        <li><a href="/"  class="{% if self.title == 'Home' %} active {% endif %}">Home</a></li>
+                        <li><a href="/why-aapoon" class="{% if self.title == 'Why Aapoon' %} active {% endif %}">Why Aapoon</a></li>
+                        <li><a href="/news" class="{% if self.title == 'News' %} active {% endif %}">News</a></li>
+                        <li><a href="/faq" class="{% if self.title == 'Faq' %} active {% endif %}">FAQs</a></li>
+                        <li><a href="/invest" class="{% if self.title == 'Invest' %} active {% endif %}">Invest</a></li>
+                        <li ><a id="login" class="nav-log-in-out" href="https://web.aapoon.com/#/app/join-us">Sign in</a></li>
+                        <li><a id="logout" class="nav-log-in-out" href="https://web.aapoon.com/#/app/join-us">Sign up</a></li>
+                </ul>
+            </div><!-- end of nav-collapse -->
+            <!-- SEARCH -->
+            <button type="button" class="buttonsearch" id="buttonsearch">
+                <i class="glyphicon glyphicon-search openclosesearch"></i><i class="glyphicon glyphicon-remove openclosesearch" style="display:none"></i>
+            </button>
+            <div class="searchbardiv" id="formsearch">
+				<form role="search" method="get" id="searchform" action = "{% url 'search' %}" >
+					<div class="input-group">
+						<input type="text" id="searchbox" class="form-control" name="query" {% if search_query %} value="{{ search_query }}"{% endif %} id="query" placeholder="Search...">
+					</div>
+				</form>
+
+			</div>
+            <!-- END SEARCH -->
+        </div><!-- end of container -->
+    </nav>
+</header>
+<!-- end of header -->

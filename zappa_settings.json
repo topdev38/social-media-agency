@@ -1,0 +1,11 @@
+{
+    "production": {
+        "django_settings": "aapoon.settings.production",
+        "profile_name": "default",
+        "project_name": "aapoon",
+        "runtime": "python3.7",
+        "s3_bucket": "zappa-a8pgot5be",
+        "aws_region": "us-east-1",
+        "exclude" : ["_sqlite.so"]
+    }
+}

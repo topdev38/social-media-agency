@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+{% block content %}
+<!-- {% image self.head_image fill-900x400 as banner %} -->
+<!-- start head-short -->
+<section class="section-padding">
+    <div class="container">
+        <div class="head-short">
+            <h1>
+                CONTACT US
+            </h1>
+        </div>
+        <div class="whitepaper-custom-text">
+            <p>
+                {{self.intro | safe}}
+            </p>
+        </div>
+        <div class="line-full-width"></div>
+        <div class="whitepaper-custom-summary">
+            <p>
+                {{self.summary | safe}}
+            </p>
+        </div>
+        <div class="row">
+            <form action="{% pageurl page %}" method="POST" class="contact-form col-md-6">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <div class="submit-content">
+                    <input type="submit" class="submit-button disable-button" disabled>
+                </div>
+                
+            </form>
+        </div>
+        <div class="line-full-width"></div>
+        <div class="row m-t-b-25">
+            <div class="col col-md-6 right-col">
+                <div class="headquarter">
+                    <h1>
+                        Headquarters – Houston, TX
+                    </h1>
+                    <p>3050 Post Oak, Suite 1350</p>
+                    <p>Houston, TX 77056</p>
+                    <p>support@aapoon.com</p>
+                </div>
+            </div>
+
+            <div class="col col-md-6 left-col">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.5133776493303!2d-95.4650198849787!3d29.73385208199653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c171e4faff81%3A0x312b951f3dd38358!2s3050%20Post%20Oak%20Blvd%20%231350%2C%20Houston%2C%20TX%2077056%2C%20USA!5e0!3m2!1sen!2sin!4v1585031828911!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+            </div>
+        </div> <!-- end row -->
+        
+        <div class="row m-t-b-25">
+            <div class="col col-md-6 right-col">
+                <div class="headquarter">
+                    <h1>
+                        Development Center – Hyderabad, India
+                    </h1>
+                    <p>7/B, Shiva Rama Krishan Colony Rd
+                    </p>
+                    <p>Shiva Rama Krishna Colony
+                        Sarvasukhi Colony, West Marredpally
+                    </p>
+                    <p>Secunderabad, Telangana 500 026
+                        India                        
+                    </p>
+                </div>
+            </div>
+
+            <div class="col col-md-6 left-col">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d632.1044217068786!2d78.50181045166624!3d17.448820967579465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a3ee7b354ed%3A0x974d9e0a1cb52cab!2s7%2FB%2C%20Shiva%20Rama%20Krishna%20Colony%20Rd%2C%20Shiva%20Rama%20Krishna%20Colony%2C%20Sarvasukhi%20Colony%2C%20West%20Marredpally%2C%20Secunderabad%2C%20Telangana%20500026!5e0!3m2!1sen!2sin!4v1585032161967!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                  </div>
+            </div>
+        </div> <!-- end row -->
+</section>
+    
+{% endblock content%}
+
+

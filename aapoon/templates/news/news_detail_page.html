@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+ 
+    <!-- start featured -->
+    <section class="featured section-padding" id="service">
+        <div class="container">
+            <!-- <img src="{{ banner.url }}" alt class="slider-bg"> -->
+            <h1 style="text-align: center; padding-bottom: 50px;">
+                {{self.custom_title}}
+            </h1>
+            <p>
+                {{ self.content | safe }}
+            </p>
+    </section>
+    <!-- end featured -->
+{% endblock content %}
